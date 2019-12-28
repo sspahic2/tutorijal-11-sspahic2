@@ -3,7 +3,16 @@ package ba.unsa.etf.rpr;
 public class Drzava {
     private int drzavaID;
     private String naziv = "";
-    private Grad glavniGrad;
+    private Grad glavniGrad = null;
+
+    public Drzava(int drzavaID, String naziv, Grad glavniGrad) {
+        this.drzavaID = drzavaID;
+        this.naziv = naziv;
+        this.glavniGrad = glavniGrad;
+    }
+
+    public Drzava() {}
+
 
     public String getNaziv() {
         return naziv;
