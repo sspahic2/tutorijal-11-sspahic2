@@ -1,0 +1,15 @@
+.nazivPrazan {
+    -fx-control-inner-background: lightpink;
+}
+
+.nazivNijePrazan {
+    -fx-control-inner-background: greenyellow;
+}
+
+.brojNegativan {
+    -fx-control-inner-background: lightpink;
+}
+
+.brojPozitivan {
+    -fx-control-inner-background: greenyellow;
+}

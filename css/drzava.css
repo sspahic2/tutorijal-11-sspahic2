@@ -1,0 +1,7 @@
+.poljePrazno{
+    -fx-control-inner-background: lightpink;
+}
+
+.poljeNijePrazno {
+    -fx-control-inner-background: greenyellow;
+}

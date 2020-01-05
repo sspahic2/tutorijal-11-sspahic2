@@ -253,5 +253,13 @@ public class GeografijaDAO {
         }
 
     }
+
+    public Grad nadjiGrad(String imeGrada) {
+        return null;
+    }
+
+    public ArrayList<Drzava> drzave() {
+        return null;
+    }
 }
 
