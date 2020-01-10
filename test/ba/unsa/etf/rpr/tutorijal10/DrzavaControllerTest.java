@@ -1,10 +1,9 @@
-package ba.unsa.etf.rpr;
+package ba.unsa.etf.rpr.tutorijal10;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.stage.Stage;
@@ -15,7 +14,8 @@ import org.testfx.framework.junit5.ApplicationExtension;
 import org.testfx.framework.junit5.Start;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 @ExtendWith(ApplicationExtension.class)
@@ -26,7 +26,7 @@ class DrzavaControllerTest {
     @Start
     public void start (Stage stage) throws Exception {
         GeografijaDAO dao = GeografijaDAO.getInstance();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/drzava.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/drzava.fxml"));
         ctrl = new DrzavaController(null, dao.gradovi());
         loader.setController(ctrl);
         Parent root = loader.load();

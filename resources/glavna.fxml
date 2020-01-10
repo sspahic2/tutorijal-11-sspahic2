@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <GridPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
@@ -27,12 +22,12 @@
           <TableColumn fx:id="colGradDrzava" prefWidth="116.0" text="Država" />
         </columns>
       </TableView>
-      <Button fx:id="btnDodajGrad" minWidth="120.0" mnemonicParsing="false" text="Dodaj grad" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER">
+      <Button fx:id="btnDodajGrad" onAction="#otvoriProzorGradoviAction" minWidth="120.0" mnemonicParsing="false" text="Dodaj grad" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER">
          <GridPane.margin>
             <Insets left="20.0" top="-120.0" />
          </GridPane.margin>
       </Button>
-      <Button fx:id="btnDodajDrzavu" minWidth="120.0" mnemonicParsing="false" text="Dodaj državu" GridPane.columnIndex="1">
+      <Button fx:id="btnDodajDrzavu" onAction="#otvoriProzorDrzaveAction" minWidth="120.0" mnemonicParsing="false" text="Dodaj državu" GridPane.columnIndex="1">
          <GridPane.margin>
             <Insets left="20.0" top="-60.0" />
          </GridPane.margin>

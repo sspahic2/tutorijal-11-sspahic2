@@ -1,4 +1,4 @@
-package ba.unsa.etf.rpr;
+package ba.unsa.etf.rpr.tutorijal10;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -33,7 +33,7 @@ class GradControllerTest {
         dbfile.delete();
         GeografijaDAO dao = GeografijaDAO.getInstance();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/grad.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/grad.fxml"));
         ctrl = new GradController(null, dao.drzave());
         loader.setController(ctrl);
         Parent root = loader.load();

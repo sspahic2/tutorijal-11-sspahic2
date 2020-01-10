@@ -1,8 +1,9 @@
-package ba.unsa.etf.rpr;
+package ba.unsa.etf.rpr.tutorijal10;
+
 
 public class Grad {
-    private int gradID = 0;
-    private String naziv = "";
+    private int gradID;
+    private String naziv;
     private Drzava drzava = null;
     private int brojStanovnika;
 
@@ -14,6 +15,14 @@ public class Grad {
     }
 
     public Grad() {}
+
+    public int getGradID() {
+        return gradID;
+    }
+
+    public void setGradID(int gradID) {
+        this.gradID = gradID;
+    }
 
     public String getNaziv() {
         return naziv;
@@ -39,11 +48,8 @@ public class Grad {
         this.brojStanovnika = brojStanovnika;
     }
 
-    public int getGradID() {
-        return gradID;
-    }
-
-    public void setGradID(int gradID) {
-        this.gradID = gradID;
+    @Override
+    public String toString() {
+        return naziv;
     }
 }
