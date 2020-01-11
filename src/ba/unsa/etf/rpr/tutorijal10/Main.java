@@ -31,6 +31,14 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+        /*Grad g = new Grad(1, "Sarajevo", 123, null);
+        Drzava d = new Drzava(1, "Bosna i Hercegovina", g);
+        g.setDrzava(d);
 
+        GeografijaDAO.getInstance().dodajDrzavu(d);
+        System.out.println("Kraj");
+
+        for(Grad grad : GeografijaDAO.getInstance().gradovi())
+            System.out.println(grad);*/
     }
 }

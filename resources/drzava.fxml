@@ -49,8 +49,8 @@
             <Insets bottom="10.0" right="10.0" />
          </padding>
          <buttons>
-            <Button fx:id="btnOk" mnemonicParsing="false" text="Ok" />
-            <Button fx:id="btnCancel" mnemonicParsing="false" text="Cancel" />
+            <Button fx:id="btnOk" mnemonicParsing="false" onAction="#buttonOkAction" text="Ok" />
+            <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#buttonCancelAction" text="Cancel" />
          </buttons>
       </ButtonBar>
    </children>

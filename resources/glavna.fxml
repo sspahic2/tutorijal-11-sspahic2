@@ -32,12 +32,12 @@
             <Insets left="20.0" top="-60.0" />
          </GridPane.margin>
       </Button>
-      <Button fx:id="btnIzmijeniGrad" minWidth="120.0" mnemonicParsing="false" text="Izmijeni grad" GridPane.columnIndex="1">
+      <Button fx:id="btnIzmijeniGrad" onAction="#izmijeniGradAction" minWidth="120.0" mnemonicParsing="false" text="Izmijeni grad" GridPane.columnIndex="1">
          <GridPane.margin>
             <Insets left="20.0" />
          </GridPane.margin>
       </Button>
-      <Button fx:id="btnObrisiGrad" minWidth="120.0" mnemonicParsing="false" text="Obriši grad" GridPane.columnIndex="1">
+      <Button fx:id="btnObrisiGrad" minWidth="120.0" onAction="#obrisiGradAction" mnemonicParsing="false" text="Obriši grad" GridPane.columnIndex="1">
          <GridPane.margin>
             <Insets left="20.0" top="60.0" />
          </GridPane.margin>
