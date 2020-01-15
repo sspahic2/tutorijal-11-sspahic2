@@ -293,5 +293,9 @@ public class GeografijaDAO {
         }
 
     }
+
+    public Connection getConn() {
+        return conn;
+    }
 }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <GridPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
@@ -16,30 +16,40 @@
    <children>
       <TableView fx:id="tableViewGradovi" minHeight="200.0" minWidth="245.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowSpan="3">
         <columns>
-          <TableColumn fx:id="colGradId" text="ID" />
-          <TableColumn fx:id="colGradNaziv" prefWidth="93.0" text="Naziv" />
-          <TableColumn fx:id="colGradStanovnika" prefWidth="125.0" text="Stanovnika" />
-          <TableColumn fx:id="colGradDrzava" prefWidth="116.0" text="Država" />
+          <TableColumn fx:id="colGradId" text="%ID" />
+          <TableColumn fx:id="colGradNaziv" prefWidth="93.0" text="%Naziv" />
+          <TableColumn fx:id="colGradStanovnika" prefWidth="125.0" text="%Stanovnika" />
+          <TableColumn fx:id="colGradDrzava" prefWidth="116.0" text="%Drzava" />
         </columns>
       </TableView>
-      <Button fx:id="btnDodajGrad" onAction="#otvoriProzorGradoviAction" minWidth="120.0" mnemonicParsing="false" text="Dodaj grad" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER">
+      <Button fx:id="btnDodajGrad" minWidth="120.0" mnemonicParsing="false" onAction="#otvoriProzorGradoviAction" text="%Dodaj grad" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER">
          <GridPane.margin>
             <Insets left="20.0" top="-120.0" />
          </GridPane.margin>
       </Button>
-      <Button fx:id="btnDodajDrzavu" onAction="#otvoriProzorDrzaveAction" minWidth="120.0" mnemonicParsing="false" text="Dodaj državu" GridPane.columnIndex="1">
+      <Button fx:id="btnDodajDrzavu" minWidth="120.0" mnemonicParsing="false" onAction="#otvoriProzorDrzaveAction" text="%Dodaj drzavu" GridPane.columnIndex="1">
          <GridPane.margin>
             <Insets left="20.0" top="-60.0" />
          </GridPane.margin>
       </Button>
-      <Button fx:id="btnIzmijeniGrad" onAction="#izmijeniGradAction" minWidth="120.0" mnemonicParsing="false" text="Izmijeni grad" GridPane.columnIndex="1">
+      <Button fx:id="btnIzmijeniGrad" minWidth="120.0" mnemonicParsing="false" onAction="#izmijeniGradAction" text="%Izmijeni grad" GridPane.columnIndex="1">
          <GridPane.margin>
             <Insets left="20.0" />
          </GridPane.margin>
       </Button>
-      <Button fx:id="btnObrisiGrad" minWidth="120.0" onAction="#obrisiGradAction" mnemonicParsing="false" text="Obriši grad" GridPane.columnIndex="1">
+      <Button fx:id="btnObrisiGrad" minWidth="120.0" mnemonicParsing="false" onAction="#obrisiGradAction" text="%Obrisi grad" GridPane.columnIndex="1">
          <GridPane.margin>
             <Insets left="20.0" top="60.0" />
+         </GridPane.margin>
+      </Button>
+      <Button fx:id="btnStampaj" minWidth="120.0" mnemonicParsing="false" onAction="#stampajGradove" text="%Stampaj" GridPane.columnIndex="1">
+         <GridPane.margin>
+            <Insets left="20.0" top="120.0" />
+         </GridPane.margin>
+      </Button>
+      <Button fx:id="btnJezici" minWidth="120.0" mnemonicParsing="false" onAction="#jezikAction" text="%Jezici" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="20.0" />
          </GridPane.margin>
       </Button>
    </children>

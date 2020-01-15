@@ -6,6 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.ResourceBundle;
+
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class Main extends Application {
@@ -19,7 +21,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         model = GeografijaDAO.getInstance();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/glavna.fxml"));
+        ResourceBundle bundle = ResourceBundle.getBundle("Translate");
+        FXMLLoader loader = new FXMLLoader( getClass().getResource("/glavna.fxml" ), bundle);
         loader.setController(new GlavnaController(model));
         Parent root = loader.load();
         primaryStage.setTitle("Korisnici");

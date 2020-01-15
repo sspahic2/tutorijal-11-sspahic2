@@ -8,16 +8,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.JRException;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
@@ -31,7 +31,7 @@ public class GlavnaController implements Initializable {
     @FXML TableColumn<Grad, String> colGradNaziv;
     @FXML TableColumn<Grad, Integer> colGradStanovnika;
     @FXML TableColumn<Grad, String> colGradDrzava;
-
+    private ResourceBundle bundle;
 
     public GlavnaController(GeografijaDAO model) {
         this.model = model;
@@ -144,5 +144,58 @@ public class GlavnaController implements Initializable {
         else {
             alert.close();
         }
+    }
+
+    public void stampajGradove(ActionEvent actionEvent) {
+        try {
+            new GradoviReport().showReport(model.getConn());
+        } catch (JRException e1) {
+            e1.printStackTrace();
+        }
+    }
+
+
+    private void reloadScene() {
+        try {
+        model = GeografijaDAO.getInstance();
+        bundle = ResourceBundle.getBundle("Translate");
+        Stage stage = new Stage();
+        FXMLLoader loader = new FXMLLoader( getClass().getResource("/glavna.fxml" ), bundle);
+        loader.setController(this);
+        Parent root;
+            root = loader.load();
+        stage.setTitle("Korisnici");
+        stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    }
+
+    public void jezikAction(ActionEvent actionEvent) {
+        ArrayList<String> jezici = new ArrayList<>();
+        jezici.add("Bosanski");
+        jezici.add("Engleski");
+        jezici.add("Njemacki");
+        jezici.add("Francuski");
+
+        ObservableList<String> observableList = FXCollections.observableArrayList();
+        observableList.addAll(jezici);
+        ChoiceDialog<String> choiceDialog = new ChoiceDialog<String>(observableList.get(0), observableList);
+        choiceDialog.showAndWait();
+
+        if(choiceDialog.getResult().equals("Bosanski")) {
+            Locale.setDefault(new Locale("bs", "BA"));
+        }
+        else if(choiceDialog.getResult().equals("Engleski")) {
+            Locale.setDefault(new Locale("en", "US"));
+        }
+        else if(choiceDialog.getResult().equals("Njemacki")) {
+            Locale.setDefault(new Locale("de", "DE"));
+        }
+        else {
+            Locale.setDefault(new Locale("fr", "FR"));
+        }
+        reloadScene();
     }
 }
