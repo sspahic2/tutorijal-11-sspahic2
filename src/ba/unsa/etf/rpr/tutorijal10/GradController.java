@@ -8,6 +8,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -19,7 +21,10 @@ import java.util.regex.Pattern;
 public class GradController implements Initializable {
     @FXML TextField fieldNaziv;
     @FXML TextField fieldBrojStanovnika;
+    @FXML TextField fldPutanja;
     @FXML ChoiceBox<Drzava> choiceDrzava;
+    @FXML ImageView slikaView;
+    private String url = "";
     GeografijaDAO model;
     ObservableList<Drzava> observableList = FXCollections.observableArrayList();
     private Grad imaZaIzmjenu;
@@ -48,7 +53,10 @@ public class GradController implements Initializable {
         if(imaZaIzmjenu != null) {
             fieldNaziv.setText(String.valueOf(imaZaIzmjenu.getNaziv()));
             fieldBrojStanovnika.setText(String.valueOf(imaZaIzmjenu.getBrojStanovnika()));
-
+            Image img = null;
+            fldPutanja.setText(imaZaIzmjenu.getSlikaPath());
+            img = new Image(imaZaIzmjenu.getSlikaPath());
+            slikaView.setImage(img);
             fieldNaziv.getStyleClass().removeAll("nazivPrazan");
             fieldNaziv.getStyleClass().add("nazivNijePrazan");
 
@@ -90,12 +98,14 @@ public class GradController implements Initializable {
         if(imaZaIzmjenu != null) {
             imaZaIzmjenu.setNaziv(fieldNaziv.getText());
             imaZaIzmjenu.setBrojStanovnika(Integer.parseInt(fieldBrojStanovnika.getText()));
+            imaZaIzmjenu.setSlikaPath(fldPutanja.getText());
             model.izmijeniGrad(imaZaIzmjenu);
             Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
             stage.close();
         }
-            if (!fieldNaziv.getText().isEmpty() && fieldBrojStanovnika.getStyleClass().contains("brojPozitivan")) {
-                imaZaIzmjenu = new Grad(-1, fieldNaziv.getText(), Integer.parseInt(fieldBrojStanovnika.getText()), choiceDrzava.getSelectionModel().getSelectedItem());
+            if (!fieldNaziv.getText().isEmpty() && fieldBrojStanovnika.getStyleClass().contains("brojPozitivan") && !fldPutanja.getText().isEmpty()) {
+                imaZaIzmjenu = new Grad(-1, fieldNaziv.getText(), Integer.parseInt(fieldBrojStanovnika.getText()), choiceDrzava.getSelectionModel().getSelectedItem(),
+                        fldPutanja.getText());
                 model.dodajGrad(imaZaIzmjenu);
                 Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
                 stage.close();
@@ -107,4 +117,7 @@ public class GradController implements Initializable {
         stage.close();
     }
 
+    public void dragSlika(ActionEvent actionEvent) {
+
+    }
 }

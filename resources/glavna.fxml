@@ -16,10 +16,11 @@
    <children>
       <TableView fx:id="tableViewGradovi" minHeight="200.0" minWidth="245.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowSpan="3">
         <columns>
-          <TableColumn fx:id="colGradId" text="%ID" />
-          <TableColumn fx:id="colGradNaziv" prefWidth="93.0" text="%Naziv" />
-          <TableColumn fx:id="colGradStanovnika" prefWidth="125.0" text="%Stanovnika" />
-          <TableColumn fx:id="colGradDrzava" prefWidth="116.0" text="%Drzava" />
+          <TableColumn fx:id="colGradId" prefWidth="67.0" text="%ID" />
+          <TableColumn fx:id="colGradNaziv" prefWidth="79.0" text="%Naziv" />
+          <TableColumn fx:id="colGradStanovnika" prefWidth="97.0" text="%Stanovnika" />
+          <TableColumn fx:id="colGradDrzava" prefWidth="100.0" text="%Drzava" />
+          <TableColumn fx:id="colSlikaPath" prefWidth="101.0" text="%Slika" />
         </columns>
       </TableView>
       <Button fx:id="btnDodajGrad" minWidth="120.0" mnemonicParsing="false" onAction="#otvoriProzorGradoviAction" text="%Dodaj grad" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER">

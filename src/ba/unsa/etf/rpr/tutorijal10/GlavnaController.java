@@ -31,6 +31,7 @@ public class GlavnaController implements Initializable {
     @FXML TableColumn<Grad, String> colGradNaziv;
     @FXML TableColumn<Grad, Integer> colGradStanovnika;
     @FXML TableColumn<Grad, String> colGradDrzava;
+    @FXML TableColumn<Grad, String> colSlikaPath;
     private ResourceBundle bundle;
 
     public GlavnaController(GeografijaDAO model) {
@@ -59,6 +60,7 @@ public class GlavnaController implements Initializable {
         colGradNaziv.setCellValueFactory(new PropertyValueFactory<>("naziv"));
         colGradStanovnika.setCellValueFactory(new PropertyValueFactory<>("brojStanovnika"));
         colGradDrzava.setCellValueFactory(new PropertyValueFactory<>("drzava"));
+        colSlikaPath.setCellValueFactory(new PropertyValueFactory<>("slikaPath"));
         gradObservableList = FXCollections.observableArrayList(model.gradovi());
        // tableViewGradovi.getColumns().setAll(colGradId, colGradNaziv, colGradStanovnika, colGradDrzava);
         tableViewGradovi.setItems(gradObservableList);

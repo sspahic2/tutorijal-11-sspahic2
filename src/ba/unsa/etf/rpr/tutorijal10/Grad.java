@@ -6,12 +6,14 @@ public class Grad {
     private String naziv;
     private Drzava drzava = null;
     private int brojStanovnika;
+    private String slikaPath = "";
 
-    public Grad(int gradID, String naziv, int brojStanovnika, Drzava drzava) {
+    public Grad(int gradID, String naziv, int brojStanovnika, Drzava drzava, String path) {
         this.gradID = gradID;
         this.naziv = naziv;
         this.drzava = drzava;
         this.brojStanovnika = brojStanovnika;
+        this.slikaPath = path;
     }
 
     public Grad() {}
@@ -46,6 +48,14 @@ public class Grad {
 
     public void setBrojStanovnika(int brojStanovnika) {
         this.brojStanovnika = brojStanovnika;
+    }
+
+    public String getSlikaPath() {
+        return slikaPath;
+    }
+
+    public void setSlikaPath(String slikaPath) {
+        this.slikaPath = slikaPath;
     }
 
     @Override
